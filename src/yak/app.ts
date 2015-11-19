@@ -5,6 +5,15 @@ class Yak {
 }
 
 @Component({
+	selector: "yak",
+	properties: ["yak"],
+	template: "{{yak.name}}"
+})
+class YakComponent {
+	public yak: Yak;
+}
+
+@Component({
 	selector: "app",
 	template: `
 		<h1>Yak Shaving</h1>
@@ -15,12 +24,12 @@ class Yak {
 			<h2>Yaks</h2>
 			<ul>
 				<li *ng-for="#yak of yaks">
-					{{yak.name}}
+					<yak [yak]="yak"/>
 				</li>
 			</ul>
 		</div>
 		`,
-	directives: [CORE_DIRECTIVES, FORM_DIRECTIVES]
+	directives: [CORE_DIRECTIVES, FORM_DIRECTIVES, YakComponent]
 })
 class AppComponent {
 	public newYakName: string;
