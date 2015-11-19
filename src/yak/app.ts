@@ -17,6 +17,7 @@ class YakComponent {
 	selector: "yaks",
 	properties: ["yaks"],
 	template: `
+		<h2>Yaks</h2>
 		<ul>
 			<li *ng-for="#yak of yaks">
 				<yak [yak]="yak"/>
@@ -54,10 +55,7 @@ class AddYakComponent {
 	template: `
 		<h1>Yak Shaving</h1>
 		<add-yak (add)="addYak($event)"></add-yak>
-		<div *ng-if="yaks.length">
-			<h2>Yaks</h2>
-			<yaks [yaks]="yaks"/>
-		</div>
+		<yaks *ng-if="yaks.length" [yaks]="yaks"/>
 		`,
 	directives: [CORE_DIRECTIVES, AddYakComponent, YaksComponent]
 })
