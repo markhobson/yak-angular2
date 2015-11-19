@@ -41,7 +41,7 @@ class YaksComponent {
 	directives: [FORM_DIRECTIVES]
 })
 class AddYakComponent {
-	public yak: Yak = new Yak;
+	public yak: Yak = new Yak();
 	add: EventEmitter = new EventEmitter();
 	
 	onAdd() {
