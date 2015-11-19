@@ -32,7 +32,6 @@ class YaksComponent {
 
 @Component({
 	selector: "add-yak",
-	properties: ["yak"],
 	events: ["add"],
 	template: `
 		<h2>Shave a yak</h2>
@@ -42,7 +41,7 @@ class YaksComponent {
 	directives: [FORM_DIRECTIVES]
 })
 class AddYakComponent {
-	public yak: Yak = new Yak();
+	yak: Yak = new Yak();
 	add: EventEmitter = new EventEmitter();
 	
 	onAdd() {
