@@ -1,5 +1,9 @@
 import {bootstrap, Component, CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/angular2';
 
+class Yak {
+	public name: string;
+}
+
 @Component({
 	selector: 'app',
 	template: `
@@ -7,14 +11,18 @@ import {bootstrap, Component, CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/a
 		<h2>Yaks</h2>
 		<ul>
 			<li *ng-for="#yak of yaks">
-				{{yak}}
+				{{yak.name}}
 			</li>
 		</ul>
 		`,
 	directives: [CORE_DIRECTIVES, FORM_DIRECTIVES]
 })
 class AppComponent {
-	public yaks = ["x", "y", "z"];
+	public yaks: Yak[] = [
+		{name: "x"},
+		{name: "y"},
+		{name: "z"}
+	];
 }
 
 bootstrap(AppComponent);
