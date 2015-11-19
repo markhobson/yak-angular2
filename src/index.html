@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Yak Shaving</title>
+		<script src="../node_modules/systemjs/dist/system.src.js"></script>
+		<script src="../node_modules/angular2/bundles/angular2.dev.js"></script>
+		<script>
+			System.config({
+				packages: {'yak': {defaultExtension: 'js'}}
+			});
+			System.import('yak/yak');
+		</script>
+	</head>
+	<body>
+		<yak>Shaving yaks...</yak>
+	</body>
+</html>
