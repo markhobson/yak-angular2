@@ -1,4 +1,4 @@
-import {bootstrap, Component, CORE_DIRECTIVES, FORM_DIRECTIVES} from "angular2/angular2";
+import {bootstrap, Component, EventEmitter, CORE_DIRECTIVES, FORM_DIRECTIVES} from "angular2/angular2";
 
 class Yak {
 	public name: string;
@@ -30,21 +30,38 @@ class YaksComponent {
 }
 
 @Component({
+	selector: "add-yak",
+	properties: ["yak"],
+	events: ["add"],
+	template: `
+		<h2>Shave a yak</h2>
+		<input [(ng-model)]="yak.name" placeholder="What's next?"/>
+		<button (click)="onAdd()">Shave</button>
+	`,
+	directives: [FORM_DIRECTIVES]
+})
+class AddYakComponent {
+	public yak: Yak = new Yak;
+	add: EventEmitter = new EventEmitter();
+	
+	onAdd() {
+		this.add.next(this.yak);
+	}
+}
+
+@Component({
 	selector: "app",
 	template: `
 		<h1>Yak Shaving</h1>
-		<h2>Shave a yak</h2>
-		<input [(ng-model)]="newYak.name" placeholder="What's next?"/>
-		<button (click)="addYak(newYak)">Shave</button>
+		<add-yak (add)="addYak($event)"></add-yak>
 		<div *ng-if="yaks.length">
 			<h2>Yaks</h2>
 			<yaks [yaks]="yaks"/>
 		</div>
 		`,
-	directives: [CORE_DIRECTIVES, FORM_DIRECTIVES, YaksComponent]
+	directives: [CORE_DIRECTIVES, AddYakComponent, YaksComponent]
 })
 class AppComponent {
-	public newYak: Yak = new Yak;
 	public yaks: Yak[] = [];
 	
 	addYak(yak: Yak) {
