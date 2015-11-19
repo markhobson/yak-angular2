@@ -22,11 +22,7 @@ class Yak {
 })
 class AppComponent {
 	public newYakName: string;
-	public yaks: Yak[] = [
-		{name: "x"},
-		{name: "y"},
-		{name: "z"}
-	];
+	public yaks: Yak[] = [];
 	
 	addYak(name: string) {
 		this.yaks.push({name: name});
