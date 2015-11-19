@@ -1,11 +1,11 @@
-import {bootstrap, Component, CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/angular2';
+import {bootstrap, Component, CORE_DIRECTIVES, FORM_DIRECTIVES} from "angular2/angular2";
 
 class Yak {
 	public name: string;
 }
 
 @Component({
-	selector: 'app',
+	selector: "app",
 	template: `
 		<h1>Yak Shaving</h1>
 		<h2>Yaks</h2>
