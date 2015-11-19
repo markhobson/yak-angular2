@@ -34,8 +34,8 @@ class YaksComponent {
 	template: `
 		<h1>Yak Shaving</h1>
 		<h2>Shave a yak</h2>
-		<input [(ng-model)]="newYakName" placeholder="What's next?"/>
-		<button (click)="addYak(newYakName)">Shave</button>
+		<input [(ng-model)]="newYak.name" placeholder="What's next?"/>
+		<button (click)="addYak(newYak)">Shave</button>
 		<div *ng-if="yaks.length">
 			<h2>Yaks</h2>
 			<yaks [yaks]="yaks"/>
@@ -44,11 +44,11 @@ class YaksComponent {
 	directives: [CORE_DIRECTIVES, FORM_DIRECTIVES, YaksComponent]
 })
 class AppComponent {
-	public newYakName: string;
+	public newYak: Yak = new Yak;
 	public yaks: Yak[] = [];
 	
-	addYak(name: string) {
-		this.yaks.push({name: name});
+	addYak(yak: Yak) {
+		this.yaks.push({name: yak.name});
 	}
 }
 
