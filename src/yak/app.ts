@@ -1,7 +1,7 @@
 import {bootstrap, Component, CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/angular2';
 
 @Component({
-	selector: 'yak',
+	selector: 'app',
 	template: `
 		<h1>Yak Shaving</h1>
 		<h2>Yaks</h2>
@@ -13,8 +13,8 @@ import {bootstrap, Component, CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/a
 		`,
 	directives: [CORE_DIRECTIVES, FORM_DIRECTIVES]
 })
-class YakComponent {
+class AppComponent {
 	public yaks = ["x", "y", "z"];
 }
 
-bootstrap(YakComponent);
+bootstrap(AppComponent);
