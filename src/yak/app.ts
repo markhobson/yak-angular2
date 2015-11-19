@@ -11,12 +11,14 @@ class Yak {
 		<h2>Shave a yak</h2>
 		<input [(ng-model)]="newYakName" placeholder="What's next?"/>
 		<button (click)="addYak(newYakName)">Shave</button>
-		<h2>Yaks</h2>
-		<ul>
-			<li *ng-for="#yak of yaks">
-				{{yak.name}}
-			</li>
-		</ul>
+		<div *ng-if="yaks.length">
+			<h2>Yaks</h2>
+			<ul>
+				<li *ng-for="#yak of yaks">
+					{{yak.name}}
+				</li>
+			</ul>
+		</div>
 		`,
 	directives: [CORE_DIRECTIVES, FORM_DIRECTIVES]
 })
