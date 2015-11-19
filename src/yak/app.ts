@@ -14,6 +14,22 @@ class YakComponent {
 }
 
 @Component({
+	selector: "yaks",
+	properties: ["yaks"],
+	template: `
+		<ul>
+			<li *ng-for="#yak of yaks">
+				<yak [yak]="yak"/>
+			</li>
+		</ul>
+	`,
+	directives: [CORE_DIRECTIVES, YakComponent]
+})
+class YaksComponent {
+	public yaks: Yak[] = [];
+}
+
+@Component({
 	selector: "app",
 	template: `
 		<h1>Yak Shaving</h1>
@@ -22,14 +38,10 @@ class YakComponent {
 		<button (click)="addYak(newYakName)">Shave</button>
 		<div *ng-if="yaks.length">
 			<h2>Yaks</h2>
-			<ul>
-				<li *ng-for="#yak of yaks">
-					<yak [yak]="yak"/>
-				</li>
-			</ul>
+			<yaks [yaks]="yaks"/>
 		</div>
 		`,
-	directives: [CORE_DIRECTIVES, FORM_DIRECTIVES, YakComponent]
+	directives: [CORE_DIRECTIVES, FORM_DIRECTIVES, YaksComponent]
 })
 class AppComponent {
 	public newYakName: string;
