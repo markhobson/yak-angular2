@@ -4,6 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
+		"build": "tsc -p src",
 		"watch": "tsc -p src -w",
 		"start": "live-server --open=src"
 	},
