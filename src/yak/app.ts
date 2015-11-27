@@ -40,7 +40,7 @@ class YaksComponent {
 	`,
 	directives: [FORM_DIRECTIVES]
 })
-class AddYakComponent {
+class AddYakForm {
 	yak: Yak = new Yak();
 	add: EventEmitter = new EventEmitter();
 	
@@ -56,7 +56,7 @@ class AddYakComponent {
 		<add-yak (add)="addYak($event)"></add-yak>
 		<yaks *ng-if="yaks.length" [yaks]="yaks"/>
 		`,
-	directives: [CORE_DIRECTIVES, AddYakComponent, YaksComponent]
+	directives: [CORE_DIRECTIVES, AddYakForm, YaksComponent]
 })
 class AppComponent {
 	public yaks: Yak[] = [];
