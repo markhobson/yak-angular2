@@ -9,7 +9,7 @@ class Yak {
 	properties: ["yak"],
 	template: "{{yak.name}}"
 })
-class YakComponent {
+class YakItem {
 	public yak: Yak;
 }
 
@@ -24,7 +24,7 @@ class YakComponent {
 			</li>
 		</ul>
 	`,
-	directives: [CORE_DIRECTIVES, YakComponent]
+	directives: [CORE_DIRECTIVES, YakItem]
 })
 class YakList {
 	public yaks: Yak[] = [];
