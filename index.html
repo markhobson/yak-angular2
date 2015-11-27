@@ -6,12 +6,19 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<title>Yak Shaving</title>
-		<link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
-		<script src="../node_modules/systemjs/dist/system.src.js"></script>
-		<script src="../node_modules/angular2/bundles/angular2.dev.js"></script>
+		<link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+		<script src="node_modules/systemjs/dist/system.src.js"></script>
+		<script src="node_modules/angular2/bundles/angular2.dev.js"></script>
 		<script>
 			System.config({
-				packages: {"yak": {defaultExtension: "js"}}
+				packages: {
+					"yak": {
+						defaultExtension: "js"
+					}
+				},
+				paths: {
+					"yak/*": "build/yak/*"
+				}
 			});
 			System.import("yak/app");
 		</script>

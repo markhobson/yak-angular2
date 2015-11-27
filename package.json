@@ -4,9 +4,9 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"build": "tsc -p src",
-		"watch": "tsc -p src -w",
-		"start": "live-server --open=src"
+		"build": "tsc -p src --rootDir src --outDir build",
+		"watch": "tsc -p src --rootDir src --outDir build -w",
+		"start": "live-server"
 	},
 	"keywords": [],
 	"author": "",
