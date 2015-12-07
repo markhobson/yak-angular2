@@ -1,17 +1,5 @@
 import {Component, CORE_DIRECTIVES} from "angular2/angular2";
-
-export class Yak {
-	public name: string;
-}
-
-@Component({
-	selector: "yak",
-	properties: ["yak"],
-	template: "{{yak.name}}"
-})
-class YakItem {
-	public yak: Yak;
-}
+import {Yak, YakItem} from "./YakItem";
 
 @Component({
 	selector: "yaks",
