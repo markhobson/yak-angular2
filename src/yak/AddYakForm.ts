@@ -1,5 +1,5 @@
 import {Component, EventEmitter, FORM_DIRECTIVES} from "angular2/angular2";
-import {Yak} from "./YakItem";
+import {Yak} from "./Yak";
 
 @Component({
 	selector: "add-yak",

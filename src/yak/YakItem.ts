@@ -1,8 +1,5 @@
 import {Component} from "angular2/angular2";
-
-export class Yak {
-	public name: string;
-}
+import {Yak} from "./Yak";
 
 @Component({
 	selector: "yak",

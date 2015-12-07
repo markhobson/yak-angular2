@@ -1,5 +1,6 @@
 import {Component, CORE_DIRECTIVES} from "angular2/angular2";
-import {Yak, YakItem} from "./YakItem";
+import {Yak} from "./Yak";
+import {YakItem} from "./YakItem";
 
 @Component({
 	selector: "yaks",

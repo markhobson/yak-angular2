@@ -1,5 +1,5 @@
 import {Component, CORE_DIRECTIVES} from "angular2/angular2";
-import {Yak} from "./YakItem";
+import {Yak} from "./Yak";
 import {YakList} from "./YakList";
 import {AddYakForm} from "./AddYakForm";
 
